@@ -18,15 +18,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnActTwo = (Button) findViewById(R.id.btnActTwo);
+        btnActTwo = findViewById(R.id.btnActTwo);
         btnActTwo.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        // Intent – это объект, в котором мы прописываем, какое Activity нам необходимо вызвать
         Intent intent = new Intent(this, ActivityTwo.class);
+        // Context – это объект, который предоставляет доступ к базовым функциям приложения таким как: доступ к ресурсам,
+        // к файловой системе, вызов Activiy и т.д
         if (v.getId() == R.id.btnActTwo)
-            startActivity(intent);
+            startActivity(intent); // метод startActivity, который находит соответствующее Activity и показывает его
 
     }
 }
